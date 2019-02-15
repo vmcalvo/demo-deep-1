@@ -1,21 +1,18 @@
-package com.example.demo;
+package com.example.demo.domain;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemoDeep1ApplicationTests {
+public class DomainTest {
 
-
-	
 	@Test
-	public void mainTest()
+	public void PersonaTest()
 	{
-		DemoDeep1Application.main(new String[] {});
+		Persona persona=new Persona();
 	}
-
 }
-

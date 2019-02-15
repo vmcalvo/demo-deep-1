@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<include
+		resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<include
+		resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<outputPatternAsHeader>true</outputPatternAsHeader>
+			<pattern>%d{YYYY-MM-dd HH:mm:ss.SSS} %-5level ${PID:- } [%thread] --- %logger{36} : %X{z-process}|%X{z-app}|%X{z-brand}|%X{z-caller-ip}|%X{z-caller-port}|%X{z-rol}|%X{z-tid}|%X{z-login}|%X{z-sfid}|%msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+	<jmxConfigurator />
+</configuration>

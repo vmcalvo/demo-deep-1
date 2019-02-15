@@ -1,3 +1,46 @@
 customprop:
  vercambiosdeconfig: Saludo
  externalUrl: http://127.0.0.1:9101
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 50000
+        readTimeout: 50000
+        loggerLevel: full
+      translator:
+        connectTimeout: 50000
+        readTimeout: 50000        
+      hola:
+        connectTimeout: 10000
+        readTimeout: 10000
+        loggerLevel: full
+      adios:
+        connectTimeout: 20000
+        readTimeout: 20000
+        loggerLevel: full
+openapi:
+  feign:
+    jwt:
+      rely-enabled: true
+  security:
+    jwt:
+      publicKey: |
+        -----BEGIN RSA PUBLIC KEY-----
+        MIIBCgKCAQEAnEzdW2JkmbrjhjtO8mxWC522ID7UkfdzwHh8dH+LTR31bS5oF4GjoDOXqvJ2KrVtWhtzJ40GTFnBbCVXl+z1jBmA6lmEzQDP9GYJcE+pKLyw7ga5eJdbk6C/j4f4CnGXt02HPHFKjhqn8HBp4q6AbhYEU3qjaoDX7sVoYbcCK7543Ze6mSk6gnSd++h2RFhMvVxEcPDfmvzaMC1tEgx44HzPbEH0twjYoSg2hIFolsoccZv7xoZnZglxZsRIQwZ39vulT9La3XFfSu/H5uD0zJlci5yRaU3E8TGC1mMJnCxm+BwNKYv5RuUV0E7f9qd8GsFKTo09XESXcWOVYPUA6wIDAQAB
+        -----END RSA PUBLIC KEY-----
+      audience: frameworkTest
+      resourceId: frameworkTest
+      ignoredEndpoints:
+        - /
+        - /api-docs/**
+        - /swagger-resources/**
+        - /swagger-ui.html**
+        - /webjars/**
+        - favicon.ico
+security.oauth2.resource.preferTokenInfo: false
+logging:
+   level:
+    root: INFO
+    org.apache.coyote.http11.Http11InputBuffer: DEBUG
+    sun.net: DEBUG
